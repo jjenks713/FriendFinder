@@ -17,7 +17,7 @@ var friendsArray = [
     },
     {
         name: "Hanna",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        photo: "https://media.gettyimages.com/photos/portrait-of-a-smiling-young-woman-picture-id905456806?s=612x612",
         scores: [
             4,
             2,
@@ -33,7 +33,7 @@ var friendsArray = [
     },
     {
         name: "Jordan",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIsgUT7YhpTp9C9P3q2IgWqUI_SxE7nbn4wcNI7F7pCBt_Q7bt",
         scores: [
             4,
             1,
@@ -49,7 +49,7 @@ var friendsArray = [
     },
     {
         name: "Igor",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUaYtUuOi9SSX-UUF8YPqqnhOBGO2uTAz4wrlnN3CkJzJdkwQ",
         scores: [
             5,
             5,
@@ -65,7 +65,7 @@ var friendsArray = [
     },
     {
         name: "Leon",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        photo: "http://www.cndajin.com/data/wls/49/7568892.jpg",
         scores: [
             1,
             1,
@@ -81,7 +81,7 @@ var friendsArray = [
     },
     {
         name: "Rebecca",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVEO2oWC5og0zrowXv8RBQ3CMcRHl86cnBTWCSvGUhCqsEpnYwjQ",
         scores: [
             4,
             2,
