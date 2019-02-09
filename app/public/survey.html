@@ -205,9 +205,11 @@
       // var jFriends = JSON.stringify(friends);
       // console.log("userInput = " + jFriends);
 
-      $.post("../data/friends", friends,
+      $.post("/api/friends", friends,
     function(data) {
-
+      if (data) {
+          console.log(data);
+        }
 
       // Clear the form when submitting
       $("#userName").val("");
