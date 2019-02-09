@@ -1,5 +1,5 @@
 
-
+app.get("/survey", )
 // for (var i = 0; i < friend.length; i ++) {
 //     var currentfriend = friends[1]
 //     app.post(route), function (req,res){
