@@ -163,12 +163,11 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
             <h2 class="modal-title"><strong>Best Match</strong></h2>
           </div>
           <div class="modal-body">
             <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt="">
+            <img id="match-img" src="" alt="Someone" style="width:200px; height:200px">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -271,7 +270,7 @@ $(document).ready(function(){
 
         });
       } else {
-        alert("Please fill out all fields before submitting!");
+        alert("Fill out entire form before submitting!");
       }
     
   });

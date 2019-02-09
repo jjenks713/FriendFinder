@@ -64,7 +64,7 @@ var friendsArray = [
         ]
     },
     {
-        name: "Lfeon",
+        name: "Leon",
         photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
         scores: [
             1,
