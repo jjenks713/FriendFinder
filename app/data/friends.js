@@ -1,16 +1,21 @@
-// var friends = {
-//     name: name-input,
-//     photo: photo-input,
-//     scores: [
-//         1,
-//         2,
-//         3,
-//         4,
-//         5,
-//         6,
-//         7,
-//         8,
-//         9,
-//         10
-// ]
-// };
+var friendsArray = [
+     {
+        name: "Josh",
+        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        scores: [
+            4,
+            2,
+            4,
+            1,
+            2,
+            4,
+            4,
+            2,
+            3,
+            3
+          ]
+        },
+]
+
+
+module.exports = friendsArray;
