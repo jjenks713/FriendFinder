@@ -13,10 +13,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Charmonman|Indie+Flower|Poppins|Rubik" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 </head>
 
 <body style="font-family: 'Poppins', sans-serif;">
@@ -42,7 +41,7 @@
             Your mind is always buzzing with unexplored ideas and plans.
             <br>
             <select class="form-control" id="q-1">
-            <option value="" disabled selected>Choose your option</option>  
+              <option value="" disabled selected>Choose your option</option>
               <option>1 (Strongly Disagree)</option>
               <option>2</option>
               <option>3</option>
@@ -53,7 +52,7 @@
             Generally speaking, you rely more on your experience than your imagination.
             <br>
             <select class="form-control" id="q-2">
-            <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected>Choose your option</option>
               <option>1 (Strongly Disagree)</option>
               <option>2</option>
               <option>3</option>
@@ -157,6 +156,28 @@
 
   </section>
 
+  <!-- Modal Dialog Displaying Closest Friend Match -->
+  <div id="results-modal" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+  
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h2 class="modal-title"><strong>Best Match</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
   <!-- Footer -->
   <footer class="page-footer font-small dark">
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -165,9 +186,8 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -178,44 +198,82 @@
 
 </html>
 <script type="text/JavaScript">
-
+$(document).ready(function(){
 
   // on user click submit, gather data
   $("#submit-btn").on("click", function(){
     event.preventDefault();
 
+    function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        $(".chosen-select").each(function() {
+
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+      if (validateForm()) {
     // push data to friends array
-    var friends = {
-      name: $("#userName").val(),
-      photo: $("#userPhoto").val(),
-      scores: [
-          $("#q-1").val(),
-          $("#q-2").val(),
-          $("#q-3").val(),
-          $("#q-4").val(),
-          $("#q-5").val(),
-          $("#q-6").val(),
-          $("#q-7").val(),
-          $("#q-8").val(),
-          $("#q-9").val(),
-          $("#q-10").val()
-        ]
-      };
+          var friends = {
+            name: $("#userName").val().trim(),
+            photo: $("#userPhoto").val().trim(),
+            scores: [
+                $("#q-1").val().trim(),
+                $("#q-2").val().trim(),
+                $("#q-3").val().trim(),
+                $("#q-4").val().trim(),
+                $("#q-5").val().trim(),
+                $("#q-6").val().trim(),
+                $("#q-7").val().trim(),
+                $("#q-8").val().trim(),
+                $("#q-9").val().trim(),
+                $("#q-10").val().trim()
+              ]
+            };
 
       // var jFriends = JSON.stringify(friends);
       // console.log("userInput = " + jFriends);
 
       $.post("/api/friends", friends,
-    function(data) {
+      function(data) {
       if (data) {
           console.log(data);
         }
 
       // Clear the form when submitting
-      $("#userName").val("");
-      $("#userPhoto").val("");
+            $("#userName").val("");
+            $("#userPhoto").val("");
+            $("#q-1").val("");
+            $("#q-2").val("");
+            $("#q-3").val("");
+            $("#q-4").val("");
+            $("#q-5").val("");
+            $("#q-6").val("");
+            $("#q-7").val("");
+            $("#q-8").val("");
+            $("#q-9").val("");
+            $("#q-10").val("");
 
-    });
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+    
   });
-
+});
 </script>
