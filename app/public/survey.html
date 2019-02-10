@@ -3,31 +3,36 @@
 
 <head>
   <title>Friend Finder</title>
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Charmonman|Indie+Flower|Poppins|Rubik" rel="stylesheet">
+  <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-
 </head>
+
+<!-- font in entire body -->
 
 <body style="font-family: 'Poppins', sans-serif;">
   <section class="container">
+    <!-- header displaying logo -->
     <div class="jumbotron bg-dark">
       <h1 class="display-2 text-center text-light"><i class="fa fa-address-book" aria-hidden="true"></i> Friend
         Finder</h1>
-
     </div>
+    <!-- form to input personal data and hold survey questions -->
     <form>
+      <!-- card for personal data, survey questions underneath -->
       <div class="form-group card">
         <h2 class="card-header">Survey Questions</h2>
         <div class="card-body">
@@ -38,6 +43,7 @@
           <input type="photo" class="form-control" placeholder="Image here" id="userPhoto">
           <br>
           <br>
+          <!-- survey question div -->
           <div>
             <h3>Question 1</h3>
             Your mind is always buzzing with unexplored ideas and plans.
@@ -160,37 +166,38 @@
 
   <!-- Modal Dialog Displaying Closest Friend Match -->
   <div id="results-modal" class="modal fade" role="dialog" style="display: none;">
-      <div class="modal-dialog">
-  
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title"><strong>Best Match</strong></h2>
-          </div>
-          <div class="modal-body">
-            <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt="Persons Picture" style="width:400px">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
-  
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="" alt="Persons Picture" style="width:400px">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
+
     </div>
+  </div>
 
 
   <!-- Footer -->
   <br><br>
   <footer class="page-footer font-small dark container">
-      <ul class="list-inline">
-          <li class="list-inline-item"><a href="/" style="text-decoration: none;">Home</a></li>
-          <li class="list-inline-item"><a href="/api/friends" style="text-decoration: none;">API Friends List</a></li>
-          <li class="list-inline-item"><a href="https://github.com/jjenks713/FriendFinder" style="text-decoration: none;">GitHub Repo</a></li>
-        </ul>
-      <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      </div>
-    </footer>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="/" style="text-decoration: none;">Home</a></li>
+      <li class="list-inline-item"><a href="/api/friends" style="text-decoration: none;">API Friends List</a></li>
+      <li class="list-inline-item"><a href="https://github.com/jjenks713/FriendFinder"
+          style="text-decoration: none;">GitHub Repo</a></li>
+    </ul>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    </div>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -206,12 +213,13 @@
 
 </html>
 <script type="text/JavaScript">
+// document.ready
 $(document).ready(function(){
 
   // on user click submit, gather data
   $("#submit-btn").on("click", function(){
     event.preventDefault();
-
+    // validate form function
     function validateForm() {
         var isValid = true;
         $(".form-control").each(function() {
@@ -228,8 +236,9 @@ $(document).ready(function(){
         });
         return isValid;
       }
+      // if vailidated, perform comparison of input data to held data
       if (validateForm()) {
-    // push data to friends array
+    // gather input data
           var friends = {
             name: $("#userName").val().trim(),
             photo: $("#userPhoto").val().trim(),
@@ -249,7 +258,7 @@ $(document).ready(function(){
 
       // var jFriends = JSON.stringify(friends);
       // console.log("userInput = " + jFriends);
-
+      // post data from input
       $.post("/api/friends", friends,
       function(data) {
       if (data) {
@@ -279,6 +288,7 @@ $(document).ready(function(){
 
         });
       } else {
+        // if not validated, alert form not complete.
         alert("Fill out entire form before submitting!");
       }
     

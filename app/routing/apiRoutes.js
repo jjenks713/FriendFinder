@@ -1,16 +1,18 @@
-
+// require export data from friends.js
 var friendsData = require("../data/friends");
 
+// module function to use data
 module.exports = function (app) {
 
-
+  // get json friendsData
     app.get("/api/friends", function (req, res) {
         res.json(friendsData);
         // console.log(jsonFriends);
 
     })
 
-    
+    // ------------------------------------------------------------------
+    // Reference
         // for (var i = 0; i < friend.length; i ++) {
         //     var currentfriend = friends[1]
         //     app.post(route), function (req,res){
@@ -20,13 +22,16 @@ module.exports = function (app) {
         //         users scores
         //         total difference
         //         for (var i = 0; i < curretfriend.score.length; i++) {
-        //         total if friend math.add parseint
+        //         total if friend math.abs parseint
         // push total into empty variable for HTML
         //         }
         //     }
         // }
-    app.post("/api/friends", function(req, res) {
+    // ------------------------------------------------------------------
 
+    // post new friend info
+    app.post("/api/friends", function(req, res) {
+        // vars to push new values
         var newFriendScores = req.body.scores;
         var scoresArray = [];
         var friendCount = 0;

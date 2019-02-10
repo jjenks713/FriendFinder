@@ -1,3 +1,4 @@
+// Set up friends Array, objects - name, photo link and scores to compare new input.
 var friendsArray = [
     {
         name: "Rosa",
@@ -145,5 +146,5 @@ var friendsArray = [
     },
 ]
 
-
+// module export friend array to apiRoutes.js
 module.exports = friendsArray;
