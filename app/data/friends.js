@@ -1,7 +1,7 @@
 var friendsArray = [
     {
-        name: "Josh",
-        photo: "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3946332.jpg",
+        name: "Rosa",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/7/76/RosaS5.jpg/revision/latest/scale-to-width-down/2000?cb=20171103224359",
         scores: [
             4,
             2,
@@ -16,8 +16,8 @@ var friendsArray = [
         ]
     },
     {
-        name: "Hanna",
-        photo: "https://media.gettyimages.com/photos/portrait-of-a-smiling-young-woman-picture-id905456806?s=612x612",
+        name: "Jake",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/7/7f/JakeS5.jpg/revision/latest?cb=20171103222710",
         scores: [
             4,
             2,
@@ -32,8 +32,8 @@ var friendsArray = [
         ]
     },
     {
-        name: "Jordan",
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIsgUT7YhpTp9C9P3q2IgWqUI_SxE7nbn4wcNI7F7pCBt_Q7bt",
+        name: "Gina",
+        photo: "https://d24v5oonnj2ncn.cloudfront.net/wp-content/uploads/2017/09/11184717/rbn_22-chelsea-pub_2944_R1_hires2.jpg",
         scores: [
             4,
             1,
@@ -48,8 +48,8 @@ var friendsArray = [
         ]
     },
     {
-        name: "Igor",
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUaYtUuOi9SSX-UUF8YPqqnhOBGO2uTAz4wrlnN3CkJzJdkwQ",
+        name: "Amy",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/0/06/AmyS5.jpg/revision/latest?cb=20171103223729",
         scores: [
             5,
             5,
@@ -64,35 +64,83 @@ var friendsArray = [
         ]
     },
     {
-        name: "Leon",
-        photo: "http://www.cndajin.com/data/wls/49/7568892.jpg",
+        name: "Raymond",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/c/ca/HoltS5.jpg/revision/latest/scale-to-width-down/2000?cb=20171103223700",
         scores: [
-            1,
-            1,
-            4,
-            1,
+            5,
             2,
-            4,
-            2,
+            5,
+            1,
             3,
+            5,
+            3,
+            2,
             3,
             4
         ]
     },
     {
-        name: "Rebecca",
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVEO2oWC5og0zrowXv8RBQ3CMcRHl86cnBTWCSvGUhCqsEpnYwjQ",
+        name: "Terry",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/f/fd/TerryS5.jpg/revision/latest/scale-to-width-down/2000?cb=20171103223830",
+        scores: [
+            4,
+            1,
+            4,
+            3,
+            5,
+            5,
+            5,
+            1,
+            1,
+            4
+        ]
+    },
+    {
+        name: "Charles",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/c/c5/BoyleS5.jpg/revision/latest/scale-to-width-down/2000?cb=20171103224410",
+        scores: [
+            3,
+            1,
+            5,
+            2,
+            3,
+            1,
+            4,
+            2,
+            3,
+            5
+        ]
+    },
+    {
+        name: "Skully",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/6/65/ScullyS5.jpg/revision/latest?cb=20171103224426",
         scores: [
             4,
             2,
-            2,
-            1,
-            4,
-            4,
             3,
-            2,
             1,
-            3
+            1,
+            2,
+            3,
+            5,
+            5,
+            5
+        ]
+    },
+    {
+        name: "Hitchcock",
+        photo: "https://vignette.wikia.nocookie.net/brooklynnine-nine/images/3/31/HitchcockS5.jpg/revision/latest/scale-to-width-down/2000?cb=20171103224421",
+        scores: [
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1
         ]
     },
 ]
