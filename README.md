@@ -20,9 +20,9 @@ To install the application follow the instructions below:
 	
 ## Running Locally
 
-To run the application locally and access it in your browser, first set the `PORT` environment variable to the value of your choice. An example is shown below.
+To run the application locally and access it in your browser, first set the `PORT` on server.js environment variable to the value of your choice. An example is shown below.
 
-	export PORT=8080
+	var PORT = process.env.PORT || 8080;
 	
 After the `PORT` environment variable has been set, run the Node.js application with the command below.
 
