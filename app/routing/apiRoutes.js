@@ -61,6 +61,9 @@ module.exports = function (app) {
         res.json(bff);
     
         //pushes new submission into the friendsList array
-        friendsData.push(req.body);
+        var fData = req.body;
+        parseInt(fData.scores);
+        friendsData.push(fData);  
+        console.log(friendsData);
       });
 };
