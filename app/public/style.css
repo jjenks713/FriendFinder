@@ -1,0 +1,7 @@
+@media screen and (max-width: 457px) {
+
+    .fixed-bottom {
+        position: static!important;
+        margin-top: 25px;
+    }
+  }
